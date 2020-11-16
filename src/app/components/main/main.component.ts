@@ -13,16 +13,12 @@ private token: string;
 
   constructor(private route: ActivatedRoute, private authService :AuthService) { }
 
-  ngOnInit() {
-    this.authService.setToken(this.getTokens(this.route.snapshot.fragment).access_token)
-    this.authService.getToken().subscribe(value => console.log(value))
+  ngOnInit() {    
+    //HealthCheck
     this.authService.getUserInfo()
   }
 
-  getTokens(route :string) {
-    var urlParams = new URLSearchParams(route);
-    return {access_token: urlParams.get("access_token"), token_type: urlParams.get("token_type"), refresh_token: urlParams.get("token_type")}
-  }
+  
 
   
 
