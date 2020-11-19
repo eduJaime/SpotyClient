@@ -19,5 +19,18 @@ export interface Images {
     width: number;
 }
 
+export interface ArtistAlbum{
+    genres : string[];
+    id : string;
+    images : Images[];
+    name : string;
+    release_date : Date;
+    artists: ArtistItem[];
+}
+
+export interface Albums{
+    items: ArtistAlbum[];
+}
+
 
 

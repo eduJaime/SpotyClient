@@ -33,9 +33,11 @@ export class ArtistSearchComponent implements OnInit {
   public getArtista(event: any) {
     if (typeof event === 'object') {
       this.artistItem = event;
-      this.artistService.setSelectedArtist(this.artistItem);
-      console.log('artista seleccionado', this.artistItem);
-      this.router.navigate(['artist']);
+      this.artistService.setSelectedArtist(this.artistItem); 
+      if(this.router.url === '/main'){
+        this.router.navigate(['artist']);
+      }
+      
     }
   }
 

@@ -12,11 +12,13 @@ import { MainComponent } from './components/main/main.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ReqInterceptor } from './services/request.interceptor';
 import { NavBarComponent } from './components/nav/nav-bar/nav-bar.component';
-import { ArtistSearchComponent } from './components/artist/artistSearch/artist-search/artist-search.component';
+import { ArtistSearchComponent } from './components/artist/artist-search/artist-search.component';
 import { ArtistService } from './services/appServices/artist/artist.service';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ArtistPageComponent } from './components/artist/artist-page/artist-page.component';
+import { AlbumCardComponent } from './components/album/album-card/album-card.component';
+import { AlbumContainerComponent } from './components/album/album-container/album-container.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { ArtistPageComponent } from './components/artist/artist-page/artist-page
     MainComponent,
     NavBarComponent,
     ArtistSearchComponent,
-    ArtistPageComponent
+    ArtistPageComponent,
+    AlbumCardComponent,
+    AlbumContainerComponent
   ],
   imports: [
     BrowserModule,
