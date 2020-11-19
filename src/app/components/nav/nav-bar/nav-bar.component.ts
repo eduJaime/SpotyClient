@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, RouterEvent, Event } from '@angular/router';
+import { filter,  } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,7 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor() { }
+  showSearch : boolean = false;
+
+  constructor(router: Router) {
+    router.events.pipe(filter((e: Event): e is RouterEvent => e instanceof RouterEvent)).subscribe((e: RouterEvent) => {
+      if( e.url.localeCompare('/')=== 0 || e.url.localeCompare('/login')=== 0 || e.url.localeCompare('/main') === 0 ){this.showSearch = false}else{this.showSearch = true};
+    });
+  }
 
   ngOnInit(): void {
   }

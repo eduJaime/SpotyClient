@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { debounceTime, distinctUntilChanged, map, switchMap } from 'rxjs/operators';
 import { Artist, ArtistItem, Artists } from 'src/app/interfaces/artist';
@@ -13,7 +14,7 @@ export class ArtistSearchComponent implements OnInit {
 
   public artistItem: ArtistItem;
 
-  constructor(private artistService: ArtistService) { }
+  constructor(private artistService: ArtistService, public router: Router) { }
 
   ngOnInit(): void { }
 
@@ -32,8 +33,9 @@ export class ArtistSearchComponent implements OnInit {
   public getArtista(event: any) {
     if (typeof event === 'object') {
       this.artistItem = event;
+      this.artistService.setSelectedArtist(this.artistItem);
       console.log('artista seleccionado', this.artistItem);
-      
+      this.router.navigate(['artist']);
     }
   }
 

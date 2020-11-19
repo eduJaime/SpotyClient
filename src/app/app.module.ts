@@ -16,6 +16,7 @@ import { ArtistSearchComponent } from './components/artist/artistSearch/artist-s
 import { ArtistService } from './services/appServices/artist/artist.service';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ArtistPageComponent } from './components/artist/artist-page/artist-page.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     LoginComponent,
     MainComponent,
     NavBarComponent,
-    ArtistSearchComponent
+    ArtistSearchComponent,
+    ArtistPageComponent
   ],
   imports: [
     BrowserModule,

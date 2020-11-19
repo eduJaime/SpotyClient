@@ -10,9 +10,19 @@ import { Artist, ArtistItem, Artists } from 'src/app/interfaces/artist';
 })
 export class ArtistService {
 
+  private selectedArtist : BehaviorSubject<ArtistItem> = new BehaviorSubject(null);
+
   private apiUrl: string = environment.apiUrl;
 
   constructor(private httpClient: HttpClient) { }
+
+  public setSelectedArtist(artist : ArtistItem){
+    this.selectedArtist.next(artist);
+  }
+
+  public getSelectedArtist(){
+    return this.selectedArtist.asObservable();
+  }
 
   public getArtists(artistName: string) : Observable<Artist>{
     let params = new HttpParams();

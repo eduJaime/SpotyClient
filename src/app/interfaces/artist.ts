@@ -10,7 +10,7 @@ export interface ArtistItem {
     id: string;
     name: string;
     images: Images[];
-    generes : string[];
+    genres : string[];
 }
 
 export interface Images {
