@@ -19,6 +19,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ArtistPageComponent } from './components/artist/artist-page/artist-page.component';
 import { AlbumCardComponent } from './components/album/album-card/album-card.component';
 import { AlbumContainerComponent } from './components/album/album-container/album-container.component';
+import { AlbumPageComponent } from './components/album/album-page/album-page.component';
+import { AlbumService } from './services/appServices/album/album.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { AlbumContainerComponent } from './components/album/album-container/albu
     ArtistSearchComponent,
     ArtistPageComponent,
     AlbumCardComponent,
-    AlbumContainerComponent
+    AlbumContainerComponent,
+    AlbumPageComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +44,7 @@ import { AlbumContainerComponent } from './components/album/album-container/albu
   providers: [
     AuthService,
     ArtistService,
+    AlbumService,
     { provide: HTTP_INTERCEPTORS, useClass: ReqInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]

@@ -32,5 +32,16 @@ export interface Albums{
     items: ArtistAlbum[];
 }
 
+export interface Tracks{
+    items : Track[];
+}
+
+export interface Track{
+    duration_ms: number;
+    id: string;
+    name: string;
+    preview_url: string;
+}
+
 
 
