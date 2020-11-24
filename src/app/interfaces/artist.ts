@@ -33,7 +33,8 @@ export interface Albums{
 }
 
 export interface Tracks{
-    items : Track[];
+    tracks : Track[];
+    items:Track[];
 }
 
 export interface Track{
@@ -41,6 +42,9 @@ export interface Track{
     id: string;
     name: string;
     preview_url: string;
+    fav:boolean;
+    album:ArtistAlbum;
+    artists:ArtistItem[];
 }
 
 

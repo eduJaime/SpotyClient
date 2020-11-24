@@ -21,6 +21,9 @@ import { AlbumCardComponent } from './components/album/album-card/album-card.com
 import { AlbumContainerComponent } from './components/album/album-container/album-container.component';
 import { AlbumPageComponent } from './components/album/album-page/album-page.component';
 import { AlbumService } from './services/appServices/album/album.service';
+import { FavouriteCardComponent } from './components/favourites/favourite-card/favourite-card.component';
+import { FavouriteContainerComponent } from './components/favourites/favourite-container/favourite-container.component';
+import { FavouriteSongComponent } from './components/favourites/favourite-song/favourite-song.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { AlbumService } from './services/appServices/album/album.service';
     ArtistPageComponent,
     AlbumCardComponent,
     AlbumContainerComponent,
-    AlbumPageComponent
+    AlbumPageComponent,
+    FavouriteCardComponent,
+    FavouriteContainerComponent,
+    FavouriteSongComponent,
   ],
   imports: [
     BrowserModule,

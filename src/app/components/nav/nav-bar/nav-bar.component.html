@@ -1,6 +1,6 @@
 <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="#">
+    <span class="navbar-brand" (click)="goToMain()">
         <img src="../../../assets/spotify.svg" width="30" height="30" alt=""> Spotify-Client
-    </a>
+    </span>
     <app-artist-search *ngIf="showSearch"></app-artist-search>  
 </nav>

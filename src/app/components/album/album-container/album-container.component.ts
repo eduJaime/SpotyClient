@@ -15,7 +15,10 @@ export class AlbumContainerComponent implements OnInit {
   constructor(private artistService: ArtistService) { }
 
   ngOnInit(): void {
-    this.artistService.getSelectedArtist().subscribe(artist => {this.artistService.getArtistAlbums(artist.id).subscribe(albums =>  this.artistAlbums = albums.items)})
+    this.artistService.getSelectedArtist()
+      .subscribe(artist => {
+        this.artistService.getArtistAlbums(artist.id)
+          .subscribe(albums =>  this.artistAlbums = albums.items)})
   }
 
 

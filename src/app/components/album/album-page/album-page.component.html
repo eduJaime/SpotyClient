@@ -18,12 +18,14 @@
         </thead>
         <tbody>
             <tr *ngFor="let track of tracks">
-
                 <td>{{track.name}}</td>
                 <td>{{track.duration_ms | date : 'mm:ss'}}</td>
                 <td><audio controls>
                         <source src="{{track.preview_url}}" type="audio/mpeg">
-                        </audio></td>
+                        </audio>
+                </td>
+                <td *ngIf="!track.fav"><img src="../../../../assets/star-outline.svg" width="30" height="30" alt="" (click)="addFavourites(track)"></td>
+                <td *ngIf="track.fav"><img src="../../../../assets/star.svg" width="30" height="30" alt="" (click)="removeFavourites(track)"></td>
             </tr>
         </tbody>
     </table>
