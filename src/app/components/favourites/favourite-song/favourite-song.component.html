@@ -1,18 +1,22 @@
-<div class="container p-5">
+<div class="container p-4">
     <div class="row">
-        <img src="{{track.album.images[0].url}}" heigt="240" width="240" class="rounded mx-auto float-left">
-        <div class="col mx-auto">
-            <h3>{{track.name}}</h3>
-            <h5>Album</h5>
-            <p>{{track.album.name}}</p>
-            <h5>Artists</h5>
-            <ul>
-                <li *ngFor="let art of track.artists">{{ art.name }}</li>
-            </ul>
-            <audio controls>
-                <source src="{{track.preview_url}}" type="audio/mpeg">
-            </audio>
+        <div class="col-5">
+            <img src="{{track.album.images[0].url}}" heigt="300" width="300" class="rounded mx-auto float-left p-3">
+        </div>
+        <div class="col-7">
+            <div class="p-3">
+                <h3>{{track.name}}</h3>
+                <h5>Album</h5>
+                <p>{{track.album.name}}</p>
+                <h5>Artists</h5>
+                <ul>
+                    <li *ngFor="let art of track.artists">{{ art.name }}</li>
+                </ul>
+                <audio controls>
+                    <source src="{{track.preview_url}}" type="audio/mpeg">
+                </audio>
+            </div>
+
         </div>
     </div>
 </div>
-
