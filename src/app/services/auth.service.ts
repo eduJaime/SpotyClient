@@ -14,11 +14,13 @@ export class AuthService {
   constructor(private httpClient : HttpClient){} 
 
   public getToken():Observable<string>{
+    this.setToken(localStorage.getItem('token').toString())
     return this.accessToken$.asObservable();
   }
 
   public setToken(token: string):void{
-    this.accessToken$.next(token);
+    localStorage.setItem('token', token);
+    this.accessToken$.next(token);  
   }
 
   public getUserInfo(){
