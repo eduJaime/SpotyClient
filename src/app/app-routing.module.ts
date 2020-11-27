@@ -3,6 +3,8 @@ import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 import { AuthGuardService as AuthGuard } from "./services/auth-guard.service";
 import { LoginComponent } from './components/login/login.component';
 import { MainComponent } from './components/main/main.component';
+import { ArtistPageComponent } from './components/artist/artist-page/artist-page.component';
+import { AlbumPageComponent } from './components/album/album-page/album-page.component';
 
 const routes: Routes = [
   {
@@ -12,6 +14,16 @@ const routes: Routes = [
   {
     path: 'main',
     component : MainComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'artist',
+    component : ArtistPageComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'album',
+    component : AlbumPageComponent,
     canActivate: [AuthGuard],
   },
 

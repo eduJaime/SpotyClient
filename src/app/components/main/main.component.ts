@@ -14,8 +14,6 @@ private token: string;
   constructor(private route: ActivatedRoute, private authService :AuthService) { }
 
   ngOnInit() {    
-    //HealthCheck
-    this.authService.getUserInfo()
   }
 
   

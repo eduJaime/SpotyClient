@@ -1,0 +1,15 @@
+<div class="container p-5">
+    <div class="row">
+        <img src="{{artist.images[0]?.url}}" heigt="240" width="240" class="rounded mx-auto float-left">
+        <div class="col mx-auto">
+            <h1>{{artist.name}}</h1>
+            <h3>Genres</h3>
+            <ul>
+                <li *ngFor="let gener of artist.genres">{{ gener }}</li>
+            </ul>
+        </div>
+    </div>
+
+
+</div>
+<app-album-container></app-album-container>

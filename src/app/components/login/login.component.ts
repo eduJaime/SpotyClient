@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     }
   }
   getTokens(route: string) {
-    var urlParams = new URLSearchParams(route);
+    let urlParams = new URLSearchParams(route);
     return { access_token: urlParams.get("access_token"), token_type: urlParams.get("token_type"), refresh_token: urlParams.get("token_type") }
   }
 
